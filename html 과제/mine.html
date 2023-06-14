@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+        /* 배경 */
+      background-image: url('/png/mine2.png');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #rock {
+        /* 아이콘 */
+      width: 200px;
+      height: 200px;
+      background-image: url('/png/rock.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+
+    #rockCount {
+      font-size: 20px;
+      color: white;
+      margin-top: 10px;
+    }
+  </style>
+  <script>
+    var rockCount = 0;
+
+    function increaseRockCount() {
+      rockCount++;
+      document.getElementById("rockCount").textContent = "돌: " + rockCount + "(개)";
+
+      if (rockCount >= 15) {
+        // 안내문
+        alert("돌을 다 캤어!");
+        location.href = "index.html";
+      }
+    }
+  </script>
+</head>
+<body>
+    <!-- 카운트 -->
+  <div id="rock" onclick="increaseRockCount()"></div>
+  <p id="rockCount">돌: 0(개)</p>
+</body>
+</html>

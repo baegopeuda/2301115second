@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+        /* 배경 */
+      background-image: url('/png/forest.png'); 
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #tree {
+        /* 나무아이콘 */
+      width: 200px;
+      height: 200px;
+      background-image: url('/png/자작나무.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+
+    #treeCount {
+        /* 글자 */
+      font-size: 20px;
+      color: white;
+      margin-top: 10px;
+    }
+  </style>
+  <script>
+    var treeCount = 0;
+
+    function increaseTreeCount() {
+      treeCount++;
+      document.getElementById("treeCount").textContent = "자작나무: " + treeCount + "(개)";
+
+      if (treeCount >= 15) {
+        // 알림창
+        alert("자작나무를 다 캤어!");
+        location.href = "index.html";
+      }
+    }
+  </script>
+</head>
+<body>
+    <!-- 자작나무 카운트 -->
+  <div id="tree" onclick="increaseTreeCount()"></div>
+  <p id="treeCount">자작나무: 0(개)</p>
+</body>
+</html>
